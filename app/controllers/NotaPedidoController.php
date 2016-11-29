@@ -3,6 +3,9 @@
 class NotaPedidoController extends BaseController
 {
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function index()
     {
         $notasPedido = NotaPedido::all();
@@ -11,6 +14,9 @@ class NotaPedidoController extends BaseController
     }
 
 
+    /**
+     * @return \Illuminate\View\View
+     */
     public function indexNota()
     {
         $opcionProveedor = Proveedor::orderBy('nombre', 'ASC')->lists('nombre', 'id');
@@ -21,6 +27,9 @@ class NotaPedidoController extends BaseController
     }
 
 
+    /**
+     * @return string
+     */
     public function producto()
     {
         $productos = Producto::paginate(5);
@@ -29,6 +38,9 @@ class NotaPedidoController extends BaseController
     }
 
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function seleccionarProducto()
     {
         $id = Input::get('id');
@@ -42,6 +54,9 @@ class NotaPedidoController extends BaseController
     }
 
 
+    /**
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
     public function guardar()
     {
         $datos = Input::all();
@@ -83,6 +98,11 @@ class NotaPedidoController extends BaseController
     }
 
 
+    /**
+     * @param $elemento
+     *
+     * @return array|bool
+     */
     protected function removerElementosVacios(&$elemento)
     {
         if (is_array($elemento)) {

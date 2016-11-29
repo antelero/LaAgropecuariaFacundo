@@ -142,7 +142,7 @@ Route::group([ 'prefix' => 'admin' ], function () {
         //Rutas de la Lista de Orden de Compra
         Route::get('nota-pedido', 'NotaPedidoController@index');
 
-        //Rutas de las Notas de Pedido
+        //Rutas de las Notas de Pedido modificadas
         Route::get('nota-pedido', 'NotaPedidoController@index');
         Route::get('nota-pedido/nueva', 'NotaPedidoController@indexNota');
         Route::get('nota-pedido/producto', 'NotaPedidoController@producto');
